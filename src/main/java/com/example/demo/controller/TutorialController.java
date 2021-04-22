@@ -109,9 +109,11 @@ public class TutorialController {
             List<Tutorial> tutorials = tutorialRepository.findByPublished(true);
             System.out.println("XIn chaof");
             if (tutorials.isEmpty()) {
+                System.out.println("Tam biet");
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
             return new ResponseEntity<>(tutorials, HttpStatus.OK);
+
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
